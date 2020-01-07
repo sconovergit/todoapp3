@@ -13,9 +13,20 @@ function onReady(){
 
     checkbox.type = "checkbox";
 
+    let deleteBtn = document.createElement('button');
+
+    deleteBtn.textContent = "Delete";
+
+    deleteBtn.addEventListener('click', function(event) {
+      //this.parentElement represents the buttons li parent
+      toDoList.removeChild(this.parentElement);
+    })
+
     newLi.textContent = title;
 
     newLi.appendChild(checkbox);
+
+    newLi.appendChild(deleteBtn);
 
     toDoList.appendChild(newLi);
 
